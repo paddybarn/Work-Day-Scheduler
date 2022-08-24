@@ -11,6 +11,7 @@
 // THEN the text for that event is saved in local storage
 // WHEN I refresh the page
 // THEN the saved events persist
+const store = document.querySelectorAll(".btn")
 var currentTime = $("#time-display");
 
 
@@ -29,16 +30,17 @@ for (let i = 0; i < timeArray.length; i++) {
     curTime = parseInt(curTime.getHours());
 
     if (curTime > time) {
-        document.getElementsByClassName(".textBox").style.backgroundColor = "grey";
-    } if (curTime === time) {
-        document.getElementById("textBox").style.backgroundColor = "red";
-    } else {document.getElementById("textBox").style.backgroundColor = "green";}
+        document.getElementById("textBox"+i).style.backgroundColor = "grey";
+    } else if (curTime === time) {
+        document.getElementById("textBox"+i).style.backgroundColor = "red";
+    } else {document.getElementById("textBox"+i).style.backgroundColor = "green";}
+    
 }
 
 
-
-
+$(".btn").on("click", function(event){
+    event.preventDefault()
+})
 displayTime()
 
 setInterval(displayTime, 1000);
-

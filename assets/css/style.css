@@ -30,6 +30,11 @@ textarea {
   border-radius: 15px;
 }
 
+#textBox0 :hover{
+  background-color: antiquewhite;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
 .row {
   white-space: pre-wrap;
   height: 80px;
